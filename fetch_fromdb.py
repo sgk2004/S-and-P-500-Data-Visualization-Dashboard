@@ -1,0 +1,21 @@
+from pymongo import MongoClient 
+
+# Mongo connection
+def get_db():
+    conn = "mongodb://localhost:27017"
+    client = MongoClient(conn)
+    return client.stockDB
+
+def fetch_stock2018():    
+    db= get_db()
+    stock=[stock for stock in db.top500_2018.find({})]
+    return stock 
+
+def all_stock():    
+    db= get_db()
+    all_stock=[stock for stock in db.all_stock.find({})]
+    return all_stock 
+
+  
+if __name__ == '__main__':
+    print(all_stock())
