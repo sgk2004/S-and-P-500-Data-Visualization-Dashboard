@@ -1,0 +1,49 @@
+[
+{
+"Dividend per Share": 0,
+"EPS": 20.68,
+"Gross Profit": 93731000000,
+"Profit Margin": 0.043,
+"Revenue": 232887000000,
+"Revenue Growth": 0.3093,
+"Sector": "Technology",
+"Total assets": 162648000000,
+"Total debt": 33145000000,
+"Total liabilities": 119099000000,
+"grossProfitMargin": 0.40247416128852,
+"netProfitMargin": 0.04325273630558999,
+"ticker": "AMZN"
+},
+    
+{
+"Dividend per Share": 2.787,
+"EPS": 3.75,
+"Gross Profit": 32400000000,
+"Profit Margin": 0.146,
+"Revenue": 66832000000,
+"Revenue Growth": 0.0273,
+"Sector": "Consumer Defensive",
+"Total assets": 118310000000,
+"Total debt": 31286000000,
+"Total liabilities": 65427000000,
+"grossProfitMargin": 0.48479770169978,
+"netProfitMargin": 0.14588819727077,
+"ticker": "PG"
+},
+    
+{
+"Dividend per Share": 0,
+"EPS": 7.65,
+"Gross Profit": 46483000000,
+"Profit Margin": 0.396,
+"Revenue": 55838000000,
+"Revenue Growth": 0.3735,
+"Sector": "Technology",
+"Total assets": 97334000000,
+"Total debt": 0,
+"Total liabilities": 13207000000,
+"grossProfitMargin": 0.8324617643898399,
+"netProfitMargin": 0.39600272216054,
+"ticker": "FB"
+}
+]
