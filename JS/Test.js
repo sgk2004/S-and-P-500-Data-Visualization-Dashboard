@@ -17,7 +17,7 @@ d3.json("2018AMAZON.json").then( data => {
     // var Chart = require('Test.js');
     var ctx = document.getElementById('myChart').getContext('2d');
     const chart= new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: tickers,
             datasets: [
@@ -26,14 +26,20 @@ d3.json("2018AMAZON.json").then( data => {
                     data: revenue,
                     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"]
                 }
-            ]
+            ],
+            // onHover: function () {
+            //     return 'hi';
+            // }
+            
         },
         options: {
             title: {
                 display: true,
-                text: 'Revenue in 2018'
+                text: 'Revenue in 2018',
+                fontSize: 50,
+                position: 'top'
             },
-            events: ['click'],
+            //events: ['click'],
             onClick : function (item) {
                 var activePoints = chart.getElementsAtEvent(item);
                 console.log(activePoints);
