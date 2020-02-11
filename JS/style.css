@@ -1,0 +1,19 @@
+#myChart {
+    width: 100px;
+    height:600px
+}
+
+body {
+    background-color: rgb(163, 191, 228);
+}
+
+canvas#myChart {
+    background-color: rgb(163, 191, 228);
+  }
+
+.navbar-brand {
+    font-family: "Times New Roman", Times, serif; 
+    text-align: center;
+    font-size: 30px;
+
+}

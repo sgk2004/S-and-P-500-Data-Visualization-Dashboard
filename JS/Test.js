@@ -3,6 +3,7 @@
 //     console.log(data)
 // }); 
 
+// d3.json("http://127.0.0.1:5000/sector/").then( data => {
 d3.json("2018AMAZON.json").then( data => {
     const tickers =data.map( record => record.ticker);
     const revenue= data.map(record=> (record.Revenue/100000));
@@ -27,17 +28,18 @@ d3.json("2018AMAZON.json").then( data => {
                     backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"]
                 }
             ],
-            // onHover: function () {
-            //     return 'hi';
-            // }
-            
         },
         options: {
             title: {
                 display: true,
                 text: 'Revenue in 2018',
                 fontSize: 50,
-                position: 'top'
+                position: 'top',
+                fontColor: 'black'
+            },
+            animation: {
+                animateRotate: true,
+                render: false
             },
             //events: ['click'],
             onClick : function (item) {
@@ -46,13 +48,12 @@ d3.json("2018AMAZON.json").then( data => {
                 var tickerSelected= (activePoints.map(record => record._model.label));
                 console.log(tickerSelected)   
                 return window.open(`https://finance.yahoo.com/quote/${tickerSelected}?p=${tickerSelected}&.tsrc=fin-srch.com/bar`);
+                //return window.open('chart2.html');
               //console.log(item)
                 },
+        fill: 'rgba(255, 0, 255, 0.5)',
         },
-        animation: {
-            animateRotate: true,
-            duration: 90000000
-        }
+    
         //labels: record.ticker
 
     });
