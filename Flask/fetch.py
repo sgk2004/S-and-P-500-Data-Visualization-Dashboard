@@ -7,6 +7,20 @@ import datetime as dt
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
+=======
+#HOME PAGE- AMZN
+@app.route('/')
+def home():
+    stocks= all_stock()
+    #read to dataframe
+    stocks_df= pd.DataFrame(stocks)
+    stocks_df= stocks_df.loc[stocks_df['ticker'] == 'AMZN']
+    print(stocks_df)
+    return jsonify(stocks_df.to_dict('records'))
+
+#TICKER
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
 @app.route('/<selected_ticker>')
 def hello(selected_ticker):
     stocks= all_stock()
@@ -15,11 +29,19 @@ def hello(selected_ticker):
     stocks_df= stocks_df.loc[stocks_df['ticker'] == selected_ticker]
     print(stocks_df)
     return jsonify(stocks_df.to_dict('records'))
+<<<<<<< HEAD
     
 @app.route('/<selected_ticker>/<freq>')
 def frequency(selected_ticker, freq):
     stocks= all_stock()
     #read to dataframe
+=======
+
+#FREQUENCY
+@app.route('/<selected_ticker>/<freq>')
+def frequency(selected_ticker, freq):
+    stocks= all_stock()
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
     stocks_df= pd.DataFrame(stocks)
     stocks_df= stocks_df.loc[stocks_df['ticker'] == selected_ticker]
     stocks_df['date']=pd.to_datetime(stocks_df['date'], format='%Y-%m-%d', errors='coerce')
@@ -28,6 +50,10 @@ def frequency(selected_ticker, freq):
     print(stocks_df)
     return jsonify(stocks_df.to_dict('records'))
 
+<<<<<<< HEAD
+=======
+#COMPANY SELECTION FOR 2018
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
 @app.route('/company/<selected_ticker>/')
 def company_ticker(selected_ticker):
     stocks= fetch_stock2018()
@@ -38,6 +64,10 @@ def company_ticker(selected_ticker):
     print(stocks_df2018)
     return jsonify(stocks_df2018.to_dict('records'))
 
+<<<<<<< HEAD
+=======
+#SECTOR SELECTION FOR 2018
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
 @app.route('/sector/<selected_sector>/')
 def sector(selected_sector):
     stocks= fetch_stock2018()
