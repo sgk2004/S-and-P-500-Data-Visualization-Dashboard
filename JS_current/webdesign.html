@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Analysis Visualization</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body style="background-color: lightgray">
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+
+            <div class="navbar-header">
+                <a class="navbar-brand logo" href="landing_page.html">Latitude</a>
+            </div>
+
+            <ul class="navbar navbar-right space">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="color: lightgray;" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="true" aria-expanded="false">Plots </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                        <a class="dropdown-item" href="humidity.html">Humidity</a>
+                        <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                        <a class="dropdown-item" href="windspeed.html">Wind Speed</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="cities_map.html">Cities Analyzed</a>
+                    </div>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="comparison.html" style="color: lightgray;"> Comparison </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html" style="color: lightgray;"> Data</a>
+                </li>
+            </ul>
+        </nav>
+        <br>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <h2 class="opening">What's the weather like as we approach the equator?</h2>
+                        <hr>
+                        <img class="image" src="Images\equatorsign.png" height="280" width="380" align="left"
+                            alt="globe image">
+                        <p class="p1">The purpose of the project was to visualize the weather of 500+ cities across the
+                            world of varying distance from the equator.The data was pulled from the OpenWeatherMap API
+                            on 9th November 2019.</p>
+                        <p class="p1">The data response received from the weather API on the day is accessible in the <a
+                                href="data.html"><strong>data</strong></a> section as table . Pandas and matplotlib were
+                            used to analyze various aspects of weather vs. latitude and a series of scatter plot were
+                            build to showcase the relationship. Weather aspects taken into consideration: temperatue,
+                            cloudiness, wind speed and humidity. A full range of <a
+                                href="cities_map.html"><strong>latitudes</strong></a> were covered .This site provides
+                            the source data and visualizations
+                            created as part of the analysis as well as explanations and descriptions of any trends and
+                            correlations witnessed.
+                        </p>
+
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2>Visualizations</h2>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><a href="temperature.html"><img
+                                        class="img img-responsive" src="Images\Temp_distribution.png" style="width:100%"
+                                        alt=""></a></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><a href="humidity.html"><img
+                                        class="img img-responsive" src="Images\Humidity_distribution.png"
+                                        style="width:100%" alt=""></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><a href="cloudiness.html"><img
+                                        class="img img-responsive" src="Images\Cloudiness_distribution.png"
+                                        style="width:100%" alt=""></a></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><a href="windspeed.html"><img
+                                        class="img img-responsive" src="Images\Windspeed_distribution.png"
+                                        style="width:100%" alt=""></a></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="blockquote-footer"> https://github.com/sgk2004/Python-api-challenge</footer>
+
+        </div>
+
+</body style="background-color: lightgray">
+
+</html>
