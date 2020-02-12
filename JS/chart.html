@@ -21,17 +21,25 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">2018 Stocks by Sector
-        </a>
+        <a class="navbar-text">2018 Stocks by Sector</a>
       </div>
     </div>
   </nav>
-  <div id="chart"></div> 
-  <!-- chart.js chart-->
-  <div data-aos="zoom-in-up" data-aos-easing="ease-in-out">
-    <canvas id="myChart" ></canvas> 
+<!-- Position Chart -->
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+      <select id="selDataset" onchange="optionChanged(this.value)">
+      </select>
+    </div>
+    <div class="col-md-9">
+  <!-- <div id="chart"> -->
+      <!-- chart.js chart-->
+      <canvas id="myChart"></canvas> 
+    </div>
+  </div> 
   </div>
-
   <!-- D3 -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -47,6 +55,7 @@
 
   <!-- Our JavaScript -->
   <script type="text/javascript" src="Test.js"></script>
+  <script type="text/javascript" src="../Flask/fetch.py"></script>
 </body>
 
 </html>
