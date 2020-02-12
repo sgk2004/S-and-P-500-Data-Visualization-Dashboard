@@ -90,6 +90,7 @@ def sectorHome():
     print(stocks_df2018)
     response= jsonify(stocks_df2018.to_dict('records'))
     response.headers.add('Access-Control-Allow-Origin', '*')
+    print(response.headers)
     return response
 
 
