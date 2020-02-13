@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stock Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lightgray">
+    <div class="navbar-header col-md-12 navbarwd  jumbotron jumbotron-fluid bgimg ">
+
+        <h1 class="textfont captiontext ">Stock Analysis
+
+        </h1>
+        <h4 class="textfont textnav">The S&P 500 is widely regarded as the best single gauge of large-cap US equities.
+        </h4>
+        <h4 class="textfont textnav">The index includes 500 leading companies and captures approximately 80% coverage of
+            available market capitalization.</h4>
+        <a href="landing_page.html"> HOME </a>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well bgimg2">
+                <h4 class="textfont  ">S&P 500 Sectorwise Analysis</h4>
+                <h5 class="textfont">Top 10 Stocks in the Sector based on Revenue</h5>
+                <h5 class="textfont "><strong>SELECT SECTOR</strong></h5>
+                <select id="sectorDataset">
+                </select>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
+                    <h3 class="panel-title textfont " style="text-align: center;">Top 10 Company in the Sector</h3>
+                </div>
+                <div id="sample-metadata" class="panel-body">
+                    <img src="Images/image.png" class="rounded float-left img-thumbnail" alt="logo">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="well bgimg1">
+                <h4 class="textfont  ">Company's Key Financial Indicator</h4>
+                <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
+                <select id="shareDataset">
+                </select>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
+                    <h3 class="panel-title textfont " style="text-align: center;">Company's Key Financial Indicator</h3>
+                </div>
+                <div id="sample-metadata" class="panel-body">
+                    <img src="Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+
+    <script src="./stock.js"></script>
+
+
+</body>
+
+</html>
