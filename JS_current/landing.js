@@ -20,9 +20,10 @@ function optionChangedSector(selectedID){
        
    //  console.log(sectors) ;
    
-   // Add the sectors to dropdown menu
+   // Append SECTORS to dropdown menu
     sectors.forEach(item =>
          {
+          //   console.log(item);
           // console.log(item.id);
          d3.select ("#sectorDataset").append('option').attr('value', item).text(item);
          });
@@ -37,21 +38,26 @@ function optionChangedSector(selectedID){
              
       
     // // Check if the right metadata is loaded for the user selected ID
-    console.log(idMetadata);
+          //console.log(idMetadata);
     // // ---------------------------------------------------------------------------------
    
-    d3.select("#shareDataset").html("");   
+    d3.select("#shareDataset").html(""); 
+     
    
-   // Select the metadata array and for each item append the item ID
-   // add ID to the dropdown
+   
+   // Append TICKERS to the dropdown
+   const arrayTicker = [];
    idMetadata.forEach(item =>
         {
-         // console.log(item.id);
-        d3.select ("#shareDataset").append('option').attr('value', item.ticker).text(item.ticker);
+          arrayTicker.push(item.ticker)
+
+     //     console.log(item.ticker);
+          d3.select ("#shareDataset").append('option').attr('value', item.ticker).text(item.ticker);
         });
+        localStorage.setItem("allTickers",arrayTicker);
+        console.log(localStorage.getItem("allTickers"));
 
-
-    
+      
     // //Display each key-value pair from the metadata JSON object into <div> class "panel panel-primary" 
     // // append <p> and for each item of the array display the 
    //  const panelDisplay = d3.select("#sample-metadata");
@@ -64,12 +70,19 @@ function optionChangedSector(selectedID){
 
     });
 }
+
+
  
  // ------------------------------------------------------------------------------------------------------
  // Initial page load takes the id 940
- optionChangedSector('Energy');
+ var sectorSelectedPage1= optionChangedSector('Energy');
  
  // When SECTOR from dropdown is selected, event on change takes the value and calls the function
- d3.select("#sectorDataset").on('change',() => {
+ sectorSelectedPage1= d3.select("#sectorDataset").on('change',() => {
  optionChangedSector(d3.event.target.value);
+ });
+ localStorage.setItem("Sector",sectorSelectedPage1 )
+
+ d3.select("#shareDataset1").on('change',() => {
+    optionChangedTicker(d3.event.target.value);
  });

@@ -24,56 +24,80 @@
   </div>
   <div class="row">
     <div class="col-md-8">
-      <div class="well bgimg2">
-        <h5 class="textfont  ">S&P 500 Sectorwise Analysis</h5>
-        <h5 class="textfont "><strong>SELECT SECTOR</strong></h5>
-        <select id="sectorDataset">
-        </select>
+      <div class="well bgimg1">
+        <h3 class="textfont  ">Time Series Analysis of Selected Ticker</h3>
+        <h4 class="textfont">Click on the option below to see Daily, Monthly, Quarterly and Yearly Frequencies</h4>
+        <!-- Add the time series chart and the buttons (Suparna) -->
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
+          <h3 class="panel-title textfont " style="text-align: center;">The top 5 Companies in the Sector</h3>
+        </div>
+        <div id="sample-metadata" class="panel-body">
+          <img src="Images/timeseries.png" class="rounded float-left img-thumbnail" alt="logo">
+        </div>
+        <div style="text-align: center;">
+          <ul class="pagination ">
+            <li class="page-item"><a class="page-link" href="#">Daily</a></li>
+            <li class="page-item"><a class="page-link" href="#">Monthly</a></li>
+            <li class="page-item"><a class="page-link" href="#">Quaterly</a></li>
+            <li class="page-item"><a class="page-link" href="#">Yearly</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="well bgimg1">
+        <h3 class="textfont  ">Company's Key Financial Indicator</h3>
+        <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
+        <ul>
+          <li  style="display: inline;">
+            
+            <select id="shareDataset1" onchange="optionChangedTicker(this.value)" >
+              <!--  -->
+            </select>
+          </li>
+          <li style="display: inline;">
+            <button onclick="myFunc1()">Change Sector</button>
+          </li>
+        </ul>
+
+
+
       </div>
       <div class="panel panel-primary">
         <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
           <h3 class="panel-title textfont " style="text-align: center;">Company's Key Financial Indicator</h3>
         </div>
         <div id="sample-metadata" class="panel-body">
-          <img src="../Images/image.png" class="rounded float-left img-thumbnail" alt="logo">
+          <img src="Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo">
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-        <div class="well bgimg1">
-          <h5 class="textfont  ">Top 10 Stocks in the Sector based on Revenue</h5>
-          <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
-          <select id="shareDataset">
-          </select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
-            <h3 class="panel-title textfont " style="text-align: center;">Company's Key Financial Indicator</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body">
-            <img src="../Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo">
-          </div>
-        </div>
-    </div>
   </div>
-      <!-- <div class="col-md-5">
+  <!-- <div class="col-md-5">
         <div id="bar"></div>
       </div>
       <div class="col-md-5">
         <div id="gauge"></div>
       </div> -->
-    </div>
-    <!-- <div class="row">
+  </div>
+  <!-- <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>
     </div> -->
+  <script>
+      function myFunc1() {
+          window.location.href="http://localhost:8000/landingpage.html";
+      } 
+  </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="./landing.js"></script>
+  <script src="./stock.js"></script>
+  
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-
-    <script src="./test.js"></script>
-   
 
 </body>
 

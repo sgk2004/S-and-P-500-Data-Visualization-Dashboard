@@ -31,6 +31,7 @@
                 <h5 class="textfont "><strong>SELECT SECTOR</strong></h5>
                 <select id="sectorDataset">
                 </select>
+                <!-- Add the Pie chart and top 10 company by sector (Jenny) -->
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
@@ -43,10 +44,19 @@
         </div>
         <div class="col-md-4">
             <div class="well bgimg1">
-                <h4 class="textfont  ">Company's Key Financial Indicator</h4>
+                <h3 class="textfont  ">Company's Key Financial Indicator</h3>
                 <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
-                <select id="shareDataset">
-                </select>
+                <ul>
+                    <li style="display: inline;">
+                        
+                        <select id="shareDataset" >
+                            <!-- onchange="optionChangedTicker(this.value)" -->
+                        </select>
+                    </li>
+                    <li style="display: inline;">
+                        <button onclick="myFunc()" >Click</button>
+                    </li>
+                </ul>
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
@@ -58,9 +68,17 @@
             </div>
         </div>
     </div>
+    <script>
+        function myFunc() {
+            tickerSelectedPage1=d3.select("#shareDataset").on('change',() => {
+            localStorage.setItem("Ticker",(d3.event.target.value))});
+            window.location.href="http://localhost:8000/stock.html";
+        } 
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-
+    <script src="./landing.js"></script>
     <script src="./stock.js"></script>
+    
 
 
 </body>
