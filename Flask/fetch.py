@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from app import fetch_stock2018, fetch_sectors2018
+from app import fetch_stock2018, fetch_sectors2018, fetch_unique_sectors
 import pandas as pd
 import datetime as dt
 
@@ -110,6 +110,31 @@ def sector(selected_sector):
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+# @app.route('/sectors/')
+# def sectoronly():
+#     stocks= fetch_unique_sectors()
+#     #read to dataframe
+#     # stocks_df2018= pd.DataFrame(stocks)
+#     # stocks_df2018= stocks_df2018.unique('Sector')
+#     # print(stocks_df2018)
+#     # stocks_df2018= stocks_df2018.loc[stocks_df2018['Sector'] == selected_sector]
+#     print(stocks)
+#     response= jsonify(stocks)
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+#     return response
+
+@app.route('/EPS/<selected_sector>/')
+def sectorEPS(selected_sector):
+    stocks= fetch_sectors2018(selected_sector)
+    #read to dataframe
+    stocks_df2018= pd.DataFrame(stocks)
+    stocks_df2018= stocks_df2018.nlargest(10,'EPS')
+    # print(stocks_df2018)
+    # stocks_df2018= stocks_df2018.loc[stocks_df2018['Sector'] == selected_sector]
+    print(stocks_df2018)
+    response= jsonify(stocks_df2018.to_dict('records'))
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 if __name__ == '__main__':
