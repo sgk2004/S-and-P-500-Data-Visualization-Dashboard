@@ -19,7 +19,13 @@ def fetch_sectors2018(selected_sector):
     sectors =[stock for stock in db.top500_2018.find({'Sector':selected_sector},{'_id': 0})]
     return sectors 
 
-def all_stocksector():    
+def fetch_unique_sectors():    
+    db= get_db()
+    sectors =[stock for stock in db.top500_2018.distinct(('Sector'),{'_id': 0})]
+    return sectors
+    print('******************************')
+
+def all_stock():    
     db= get_db()
     all_stock=[stock for stock in db.all_stock.find({},{'_id': 0})]
     # print(pd.DataFrame(all_stock))
