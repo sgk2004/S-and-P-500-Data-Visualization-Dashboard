@@ -31,49 +31,55 @@
       </div>
       <div class="panel panel-primary">
         <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
-          <h3 class="panel-title textfont " style="text-align: center;">The top 5 Companies in the Sector</h3>
+          <h3 class="panel-title textfont " style="text-align: center;"></h3>
         </div>
         <div id="sample-metadata" class="panel-body">
-          <img src="Images/timeseries.png" class="rounded float-left img-thumbnail" alt="logo">
         </div>
-        <div style="text-align: center;">
-          <ul class="pagination ">
-            <li class="page-item"><a class="page-link" href="#">Daily</a></li>
-            <li class="page-item"><a class="page-link" href="#">Monthly</a></li>
-            <li class="page-item"><a class="page-link" href="#">Quaterly</a></li>
-            <li class="page-item"><a class="page-link" href="#">Yearly</a></li>
-          </ul>
-        </div>
+        <div id="plot"></div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="well bgimg1">
-        <h3 class="textfont  ">Company's Key Financial Indicator</h3>
-        <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
-        <ul>
-          <li  style="display: inline;">
-            
-            <select id="shareDataset1" onchange="optionChangedTicker(this.value)" >
-              <!--  -->
-            </select>
-          </li>
-          <li style="display: inline;">
-            <button onclick="myFunc1()">Change Sector</button>
-          </li>
-        </ul>
+    <div id="volumeplot"></div>
+  </div>
+  <!-- <img src="Images/timeseries.png" class="rounded float-left img-thumbnail" alt="logo"> -->
+  </div>
+  <div style="text-align: center;">
+    <ul class="pagination ">
+      <li class="Daily"><a class="page-link" href="#">Daily</a></li>
+      <li class="Monthly"><a class="page-link" href="#">Monthly</a></li>
+      <li class="Quarterly"><a class="page-link" href="#">Quarterly</a></li>
+      <li class="Yearly"><a class="page-link" href="#">Yearly</a></li>
+    </ul>
+  </div>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <div class="well bgimg1">
+      <h3 class="textfont  ">Company's Key Financial Indicator</h3>
+      <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
+      <ul>
+        <li style="display: inline;">
+
+          <select id="shareDataset1" onchange="optionChangedTicker(this.value)">
+            <!--  -->
+          </select>
+        </li>
+        <li style="display: inline;">
+          <button onclick="myFunc1()">Change Sector</button>
+        </li>
+      </ul>
 
 
 
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
+        <h3 class="panel-title textfont " style="text-align: center;">Company's Key Financial Indicator</h3>
       </div>
-      <div class="panel panel-primary">
-        <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
-          <h3 class="panel-title textfont " style="text-align: center;">Company's Key Financial Indicator</h3>
-        </div>
-        <div id="financialIndicator" class="panel-body">
-          <!-- <img src="Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo"> -->
-        </div>
+      <div id="financialIndicator" class="panel-body">
+        <!-- <img src="Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo"> -->
       </div>
     </div>
+  </div>
   </div>
   <!-- <div class="col-md-5">
         <div id="bar"></div>
@@ -88,15 +94,15 @@
       </div>
     </div> -->
   <script>
-      function myFunc1() {
-          window.location.href="http://localhost:8000/landingpage.html";
-      } 
+    function myFunc1() {
+      window.location.href = "http://localhost:8000/landingpage.html";
+    } 
   </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <!-- <script src="./landing.js"></script> -->
   <script src="./stock.js"></script>
-  
+
 
 
 </body>

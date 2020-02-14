@@ -128,7 +128,8 @@ def hello(selected_ticker):
 @app.route('/<selected_ticker>/<freq>')
 def frequency(selected_ticker, freq):
     stocks= all_stock(selected_ticker)
-    stocks_df= pd.DataFrame(stocks)    
+    stocks_df= pd.DataFrame(stocks)
+    # stocks_df= stocks_df.loc[stocks_df['ticker'] == selected_ticker]    
     stocks_df['date']=pd.to_datetime(stocks_df['date'], format='%Y-%m-%d', errors='coerce')
     stocks_df['month']= pd.DatetimeIndex(stocks_df['date']).month
     stocks_df= stocks_df.resample(freq, on='date').mean()
@@ -136,6 +137,20 @@ def frequency(selected_ticker, freq):
     response= jsonify(stocks_df.to_dict('records'))
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+    # *************************************************************
+#     @app.route('/<selected_ticker>/<freq>')
+# def frequency(selected_ticker, freq):
+#     stocks= all_stock(selected_ticker)
+#     stocks_df= pd.DataFrame(stocks)
+    
+#     stocks_df['date']=pd.to_datetime(stocks_df['date'], format='%Y-%m-%d', errors='coerce')
+#     stocks_df['month']= pd.DatetimeIndex(stocks_df['date']).month
+#     stocks_df= stocks_df.resample(freq, on='date').mean()
+#     print(stocks_df)
+#     response= jsonify(stocks_df.to_dict('records'))
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+#     return response
     
 # **************************************************************************
 
