@@ -3,8 +3,9 @@
 //     console.log(data)
 // }); 
 
-// d3.json("http://127.0.0.1:5000/sector/").then( data => {
-d3.json("2018AMAZON.json").then( data => {
+d3.json("http://localhost:5000/").then( data => {
+// d3.json("2018AMAZON.json").then( data => {
+    console.log(data)
     const tickers =data.map( record => record.ticker);
     const revenue= data.map(record=> (record.Revenue/100000));
     const sector= data.map(record=> record.Sector);
