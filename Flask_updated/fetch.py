@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from createconn import all_stock, fetch_stock2014
+from createconn import all_stock, fetch_stock2014,all_company
 import pandas as pd
 import datetime as dt
 
@@ -93,7 +93,16 @@ def sectorHome():
     print(response.headers)
     return response
 
-
+#TICKER
+@app.route('/companyname')
+def company():
+    stocks= all_company()
+    #read to dataframe
+    stocks_df= pd.DataFrame(stocks)
+    print(stocks_df)
+    response= jsonify(stocks_df.to_dict('records'))
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 if __name__ == '__main__':

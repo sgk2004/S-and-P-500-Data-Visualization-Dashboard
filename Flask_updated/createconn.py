@@ -22,6 +22,12 @@ def all_stock(selected_ticker):
     print(pd.DataFrame(all_stock))
     return all_stock 
 
+def all_company(): 
+    print('make connection to collection') 
+    db= get_db()
+    all_company=[stock for stock in db.all_company.find({},{'_id': 0})]
+    print(pd.DataFrame(all_company))
+    return all_company 
   
 if __name__ == '__main__':
     print(all_stock)
