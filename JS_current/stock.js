@@ -1,17 +1,17 @@
 // Function for on change (Ticker)for the dropdown menu
 function optionChangedTicker(ticker){
           // console.log(tickerSelected);
-          console.log(localStorage.getItem("allTickers"));
+          // console.log(localStorage.getItem("allTickers"));
           var arrayTicker1 = localStorage.getItem("allTickers")
-          console.log(typeof(arrayTicker1));    
+          // console.log(typeof(arrayTicker1));    
           tickerArray= arrayTicker1.split(',')
-          console.log(tickerArray);
-          console.log(typeof(tickerArray));
+          // console.log(tickerArray);
+          // console.log(typeof(tickerArray));
                     
           d3.select("#shareDataset1").html("");
           tickerArray.forEach(item => 
                {
-                    console.log(item);
+                    // console.log(item);
                     d3.select ("#shareDataset1").append('option').attr('value', item).text(item);
       });
       d3.select ("#shareDataset1").node().value= ticker;
@@ -29,21 +29,48 @@ function optionChangedTicker(ticker){
      
   // });
 // Check if the right metadata is loaded for the user selected ID
-console.log(financialIndicator);
+  console.log(financialIndicator[0]);
+  var financialIndicatorArray = Object.entries(financialIndicator[0])
+  console.log(financialIndicatorArray)
 // ---------------------------------------------------------------------------------
 
 //Display each key-value pair from the metadata JSON object into <div> class "panel panel-primary" 
 // append <p> and for each item of the array display the 
-const panelDisplay = d3.select("#financialIndicator");
-panelDisplay.html("");
-Object.entries(financialIndicator[0]).forEach(item=> 
-  {
-     // console.log(item);
-     panelDisplay.append("p").text(`${item[0]}: ${item[1]}`)
-  });
+
+// d3.select("tbody")
+//   .selectAll("tr")
+//   .data(austinWeather)
+//   .enter()
+//   .append("tr")
+//   .html(function(d) {
+//     return `<td>${d.date}</td><td>${d.low}</td><td>${d.high}</td>`;
+//   });
+
+
+  d3.select('tbody').selectAll('tr')
+  .data(financialIndicatorArray)
+  .enter()
+  .append('tr')
+  .html(d => {
+      var reading = Object.values(d)
+      console.log(reading);
+      return `<td>${reading[0]}</td><td>${reading[1]}</td>`;
+      // Object.values(d).forEach(item =>{
+      //   // console.log(item);
+      //   const tdArr = item.map(values =>`<td>${values}</td>` );
+      //   // console.log(tdArr)
+      //   // console.log (tdArr.join(''));
+      //   return (tdArr.join(''));
+    // });
+    
+ 
+    
   })
-  updatePlotly();
-  
+
+
+})
+// Function to plot the graph
+updatePlotly();  
 }
  // *****************************************SUPARNA*************************
  basic_url = "http://localhost:5000/"
@@ -66,21 +93,21 @@ Object.entries(financialIndicator[0]).forEach(item=>
      //Build url
      var url = `http://localhost:5000/${ticker}`;
      var company_url = `http://localhost:5000/companyname`
-     console.log(url); 
+    //  console.log(url); 
      //Pull company data and loop through it for graphs
      d3.json(company_url).then(function(data) {
-         console.log(data);
+        //  console.log(data);
          company = data.filter(function (item){item.Symbol ===ticker});     
          company_name = company.Name;
      });
      //Pull all stock data and create candlestick
      d3.json(url).then(function(data) {
-     console.log(data);
+    //  console.log(data);
      dates = data.map(item=> item.date);
      volume = data.map(item=> +item.volume);
-     console.log(dates);
-     console.log(volume);
-     console.log(data.map(item=> item.close));
+    //  console.log(dates);
+    //  console.log(volume);
+    //  console.log(data.map(item=> item.close));
      
  
      var trace = {
@@ -304,11 +331,11 @@ function updatePlotly_monthly()
    ticker = d3.select ("#shareDataset1").node().value;
   monthly_url = `${basic_url}${ticker}/M`
   d3.json(monthly_url).then(function(data) {
-    console.log(data);
-    console.log(monthly_url);
+    // console.log(data);
+    // console.log(monthly_url);
     
     month = data.map(item=> item.month);
-    console.log(month);
+    // console.log(month);
     year = data.map(item => item.Year);
     volume = data.map(item => item.volume);
     //Build an array with the month and Year for each dictionary in the array
@@ -317,9 +344,9 @@ function updatePlotly_monthly()
         monthYear = `${year[i]}-${month[i]}`;
         month_yeararr.push(monthYear);
     }
-    console.log(month);
-    console.log(year);
-    console.log(month_yeararr);
+    // console.log(month);
+    // console.log(year);
+    // console.log(month_yeararr);
 
     
 var mon_trace = {
@@ -494,9 +521,12 @@ var trace = {
     }
   }
     // *******************************************************************************************
+// Function call for initial load of page2
+// Ticker selected from page1 is stored in localstorage and its read and passed in the function
  optionChangedTicker(localStorage.getItem("Ticker"));
  
 
+//  On chage function call for DropDown(SELECT TICKER)
  d3.select("#shareDataset1").on('change',() => {
    var tickerSelected = d3.select("#shareDataset1");
    var tickerValue = tickerSelected.property("value");

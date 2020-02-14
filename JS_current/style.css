@@ -4,11 +4,11 @@
 }
 
 body {
-    background-color: rgb(163, 191, 228);
+    background-color: rgb(230, 234, 238);
 }
 
 canvas#myChart {
-    background-color: rgb(163, 191, 228);
+    background-color: rgb(236, 238, 241);
   }
 
 .navbar-brand {
@@ -70,9 +70,14 @@ canvas#myChart {
     scroll-padding-left: 0px;
     background-color : 'blue';
     overflow: auto;
-    
-    
-    
-    
-    
+    position: fixed;
+         }
+
+  .tablealign{
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center; 
+    vertical-align: middle;
   }
