@@ -37,8 +37,8 @@
                 <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
                     <h3 class="panel-title textfont " style="text-align: center;">Top 10 Company in the Sector</h3>
                 </div>
-                <div id="sample-metadata" class="panel-body">
-                    <img src="Images/image.png" class="rounded float-left img-thumbnail" alt="logo">
+                <div >
+                    <canvas id="myChart"></canvas>
                 </div>
             </div>
         </div>
@@ -70,14 +70,21 @@
     </div>
     <script>
         function myFunc() {
-            tickerSelectedPage1=d3.select("#shareDataset").on('change',() => {
-            localStorage.setItem("Ticker",(d3.event.target.value))});
+            var ticker = d3.select("#shareDataset");
+            localStorage.setItem("Ticker", ticker.property("value"));
+            
             window.location.href="http://localhost:8000/stock.html";
+            
         } 
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <!-- Chart.js -->  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- D3 -->  
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="./landing.js"></script>
-    <script src="./stock.js"></script>
+    <!-- <script src="./stock.js"></script> -->
     
 
 

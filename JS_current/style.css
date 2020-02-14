@@ -18,23 +18,28 @@ canvas#myChart {
 
 }
 .bgimg {
-    background-image: url('../Images/navbar.jpg');
+    background-image: url('Images/navbar.jpg');
     backface-visibility: visible;
 }
 
 .bgimg1 {
-    background-image: url('../Images/stockjpg.jpg');
+    background-image: url('Images/stockjpg.jpg');
     backface-visibility: visible;
     
 }
 
 .bgimg2 {
-    background-image: url('../Images/stock2.jpg');
+    background-image: url('Images/stock2.jpg');
     backface-visibility: visible;
    background-size: inherit;
+}
+
+/* .bgimg3 {
+    background-image: url('Images/timeseries.png');
+    backface-visibility: visible;
    
     
-}
+} */
 .textfont{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: cornsilk;
