@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Chart</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css">
+  <!-- style.css -->
+  <link rel="stylesheet" href="static/style.css">
+
+  <!-- Our CSS
+  <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
+</head>
+<body>
+
+  <!-- The divs that holds our map -->
+  <!-- D3 Chart-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-text">2018 Stocks by Sector</a>
+      </div>
+    </div>
+  </nav>
+<!-- Position Chart -->
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+      <select id="selDataset" onchange="optionChanged(this.value)">
+      </select>
+      <button id="graph-btn" type="button" class="btn btn-default">EPS</button>
+      <button id="graph-btn2" type="button" class="btn btn-default">Revenue</button>
+    </div>
+    <div class="col-md-9">
+  <!-- <div id="chart"> -->
+      <!-- chart.js chart-->
+      <canvas id="myChart"></canvas> 
+    </div>
+  </div> 
+  </div>
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/jennie.js"></script>
+  
+</body>
+
+</html>
