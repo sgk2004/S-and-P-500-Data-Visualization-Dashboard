@@ -1,0 +1,83 @@
+#myChart {
+    width: 100px;
+    height:600px
+}
+
+body {
+    background-color: rgb(230, 234, 238);
+}
+
+canvas#myChart {
+    background-color: rgb(236, 238, 241);
+  }
+
+.navbar-brand {
+    font-family: "Times New Roman", Times, serif; 
+    text-align: center;
+    font-size: 30px;
+
+}
+.bgimg {
+    background-image: url('Images/navbar.jpg');
+    backface-visibility: visible;
+}
+
+.bgimg1 {
+    background-image: url('Images/stockjpg.jpg');
+    backface-visibility: visible;
+    
+}
+
+.bgimg2 {
+    background-image: url('Images/stock2.jpg');
+    backface-visibility: visible;
+   background-size: inherit;
+}
+
+/* .bgimg3 {
+    background-image: url('Images/timeseries.png');
+    backface-visibility: visible;
+   
+    
+} */
+.textfont{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: cornsilk;
+}
+
+.captiontext{
+    font-weight: bolder;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.textnav {    
+    text-align:center;
+    
+
+}
+.jumbotron .h1, .jumbotron h1 {
+    color:white;
+  }
+
+.navbarwd {
+    width: 100%;
+    margin-left:0px;
+    margin-right: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    padding-right: 0px;
+    scroll-padding-left: 0px;
+    background-color : 'blue';
+    overflow: auto;
+    position: fixed;
+         }
+
+  .tablealign{
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center; 
+    vertical-align: middle;
+  }

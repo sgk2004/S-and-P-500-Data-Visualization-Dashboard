@@ -7,6 +7,8 @@ import datetime as dt
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
+=======
 #HOME PAGE- AMZN
 # @app.route('/')
 # def home():
@@ -58,6 +60,7 @@ app = Flask(__name__)
 #     response.headers.add('Access-Control-Allow-Origin', '*')
 #     return response
 
+<<<<<<< HEAD
 @app.route('/company')
 def companyHome():
     stocks= fetch_stock2018()
@@ -84,6 +87,45 @@ def companyHome():
 #SECTOR HOMEPAGE FOR 2018
 @app.route('/topten/sector/<topselect>/')
 def sectorTop(topselect):
+=======
+#TICKER
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
+@app.route('/<selected_ticker>')
+def hello(selected_ticker):
+    stocks= all_stock()
+    #read to dataframe
+    stocks_df= pd.DataFrame(stocks)
+    stocks_df= stocks_df.loc[stocks_df['ticker'] == selected_ticker]
+    print(stocks_df)
+    return jsonify(stocks_df.to_dict('records'))
+<<<<<<< HEAD
+    
+@app.route('/<selected_ticker>/<freq>')
+def frequency(selected_ticker, freq):
+    stocks= all_stock()
+    #read to dataframe
+=======
+
+#FREQUENCY
+@app.route('/<selected_ticker>/<freq>')
+def frequency(selected_ticker, freq):
+    stocks= all_stock()
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
+    stocks_df= pd.DataFrame(stocks)
+    stocks_df= stocks_df.loc[stocks_df['ticker'] == selected_ticker]
+    stocks_df['date']=pd.to_datetime(stocks_df['date'], format='%Y-%m-%d', errors='coerce')
+    stocks_df['month']= pd.DatetimeIndex(stocks_df['date']).month
+    stocks_df= stocks_df.resample(freq, on='date').mean()
+    print(stocks_df)
+    return jsonify(stocks_df.to_dict('records'))
+
+<<<<<<< HEAD
+=======
+#COMPANY SELECTION FOR 2018
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
+@app.route('/company/<selected_ticker>/')
+def company_ticker(selected_ticker):
+>>>>>>> sruthi
     stocks= fetch_stock2018()
     #read to dataframe
     stocks_df2018= pd.DataFrame(stocks)
@@ -97,6 +139,13 @@ def sectorTop(topselect):
     print(response.headers)
     return response
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+#SECTOR SELECTION FOR 2018
+>>>>>>> e15dfaf7c2c1783e7f0944c00d540bc91a185e4f
+>>>>>>> sruthi
 @app.route('/sector/<selected_sector>/')
 def sector(selected_sector):
     stocks= fetch_sectors2018(selected_sector)
