@@ -26,6 +26,10 @@ def sectorHome():
 def home():
     return render_template('landingpage.html')
 
+@app.route('/tostock')
+def tostock():
+    return render_template('stock.html')
+
     # selected_ticker= 'AAPL' 
     # stocks= all_stock(selected_ticker)
     # #read to dataframe

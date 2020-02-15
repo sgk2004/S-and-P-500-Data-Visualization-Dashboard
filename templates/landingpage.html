@@ -8,7 +8,7 @@
     <title>Stock Analysis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body style="background-color: lightgray">
@@ -65,7 +65,7 @@
                     <h3 class="panel-title textfont " style="text-align: center;"></h3>
                 </div>
                 <div id="sample-metadata" class="panel-body">
-                    <img src="../Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo">
+                    <img src="static/Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo">
                 </div>
             </div>
         </div>
@@ -75,8 +75,7 @@
             var ticker = d3.select("#shareDataset");
             localStorage.setItem("Ticker", ticker.property("value"));
             
-            window.location.href="http://localhost:8000/stock.html";
-            
+            window.location.href="{{url_for('tostock')}}";
         } 
 
     </script>
@@ -85,7 +84,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- D3 -->  
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="../static/landing.js"></script>
+    <script src="static/landing.js"></script>
     <!-- <script src="./stock.js"></script> -->
     
 
