@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stock Analysis</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: lightgray">
+  <!-- PAGE HEADER -->
+  <div class="navbar-header col-md-12 navbarwd  jumbotron jumbotron-fluid bgimg fixed-top">
+
+    <h1 class="textfont captiontext ">Stock Analysis
+
+    </h1>
+    <h3 class="textfont textnav">The S&P 500 is widely regarded as the best single gauge of large-cap US equities.</h3>
+    <h3 class="textfont textnav">The index includes 500 leading companies and captures approximately 80% coverage of
+      available market capitalization.</h3>
+    <a href="landingpage.html" style="color:rgb(247, 242, 242)" ;> GO BACK HOME </a>
+  </div>
+
+  <!-- TIME SERIES GRAPH -->
+  <div class="row">
+    <!-- LEFT SIDE OF PAGE -->
+    <div class="col-md-8">
+      <div class="well bgimg1">
+        <!-- Add the time series chart and the buttons (Suparna) -->
+        <h3 class="textfont  ">Time Series Analysis of Selected Ticker</h3>
+        <h4 class="textfont">Click on the option below to see Daily, Monthly, Quarterly and Yearly Frequencies</h4>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="background-color :rgb(16, 124, 124) ">
+          <h3 class="panel-title textfont " style="text-align: center;"></h3>
+        </div>
+      </div>
+      <!-- PLOT 1: TIME SERIES OF LOW HIGH-->
+      <div id="plot"></div>
+      <!-- PLOT 2: VOLUME PLOT -->
+      <div id="volumeplot"></div>
+      <!-- DAILY, MONTHLY, QUARTERLY, YEARLY -->
+      <div style="text-align: center;">
+        <ul class="pagination ">
+          <li class="Daily"><a class="page-link" href="#">Daily</a></li>
+          <li class="Monthly"><a class="page-link" href="#">Monthly</a></li>
+          <li class="Quarterly"><a class="page-link" href="#">Quarterly</a></li>
+          <li class="Yearly"><a class="page-link" href="#">Yearly</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE OF PAGE -->
+    <div class="col-md-4">
+      <div class="well bgimg1">
+        <h3 class="textfont  ">Company's Key Financial Indicator</h3>
+        <h5 class="textfont "><strong>SELECT TICKER</strong></h5>
+        <ul>
+          <li style="display: inline;">
+
+            <select id="shareDataset1" onchange="optionChangedTicker(this.value)">
+              <!--  -->
+            </select>
+          </li>
+          <li style="display: inline;">
+            <button onclick="myFunc1()">Change Sector</button>
+          </li>
+        </ul>
+      </div>
+      <div class="panel panel-primary">
+        <div id="financialIndicator" class="panel-body">
+          <table class="table table-striped table-hover">
+            <tbody></tbody>
+          </table>
+          <!-- <img src="Images/logo_nav.png" class="rounded float-left img-thumbnail" alt="logo"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FUNCTION CALL FOR BUTTON to change teh sector go back to home page -->
+  <script>
+    function myFunc1() {
+      window.location.href = "http://localhost:8000/landingpage.html";
+    } 
+  </script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <!-- <script src="./landing.js"></script> -->
+  <script src="./stock.js"></script>
+
+</body>
+
+</html>
