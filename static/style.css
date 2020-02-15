@@ -1,5 +1,5 @@
 #myChart {
-    width: 100px;
+    width: 600px;
     height:600px
 }
 
@@ -10,6 +10,11 @@ body {
 canvas#myChart {
     background-color: rgb(236, 238, 241);
   }
+
+.navbar-header {
+    position: relative;
+    z-index: 1;
+}
 
 .navbar-brand {
     font-family: "Times New Roman", Times, serif; 
