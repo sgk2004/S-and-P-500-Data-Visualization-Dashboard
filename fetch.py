@@ -24,14 +24,16 @@ def sectorHome():
 #HOME PAGE- APPLE
 @app.route('/')
 def home():
-    selected_ticker= 'AAPL' 
-    stocks= all_stock(selected_ticker)
-    #read to dataframe
-    stocks_df= pd.DataFrame(stocks)
-    print(stocks_df)
-    response= jsonify(stocks_df.to_dict('records'))
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return render_template('landingpage.html')
+
+    # selected_ticker= 'AAPL' 
+    # stocks= all_stock(selected_ticker)
+    # #read to dataframe
+    # stocks_df= pd.DataFrame(stocks)
+    # print(stocks_df)
+    # response= jsonify(stocks_df.to_dict('records'))
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    # return response
 
 # *******************SECTOR*************************************
 
