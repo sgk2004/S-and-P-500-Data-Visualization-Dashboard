@@ -8,11 +8,12 @@
     <title>Stock Analysis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body style="background-color: lightgray">
-    <div class="navbar-header col-md-12 navbarwd  jumbotron jumbotron-fluid bgimg ">
+ 
+    <div class="navbar-header col-md-12 navbar  jumbotron jumbotron-fluid bgimg ">
 
         <h1 class="textfont captiontext ">Stock Analysis
 
@@ -21,8 +22,9 @@
         </h3>
         <h3 class="textfont textnav">The index includes 500 leading companies and captures approximately 80% coverage of
             available market capitalization.</h3>
-        <a href="landingpage.html" style="color:rgb(247, 242, 242)" ;> HOME </a>
+        <a href="{{url_for('home')}}" style="color:rgb(247, 242, 242)" ;> HOME </a>
     </div>
+
     <div class="row">
         <div class="col-md-12 bg-secondary text-white">
             <div class="panel panel-default">
@@ -2587,7 +2589,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- D3 -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="../static/landing.js"></script>
+    <script src="static/landing.js"></script>
     <!-- <script src="./stock.js"></script> -->
 
 

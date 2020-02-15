@@ -30,6 +30,12 @@ def home():
 def tostock():
     return render_template('stock.html')
 
+@app.route('/S_PData')
+def S_PData():
+    return render_template('S&PData.html')
+
+
+
     # selected_ticker= 'AAPL' 
     # stocks= all_stock(selected_ticker)
     # #read to dataframe

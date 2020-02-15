@@ -8,12 +8,12 @@
   <title>Stock Analysis</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body style="background-color: lightgray">
   <!-- PAGE HEADER -->
-  <div class="navbar-header col-md-12 navbarwd  jumbotron jumbotron-fluid bgimg fixed-top">
+  <div class="navbar-header col-md-12 navbar  jumbotron jumbotron-fluid bgimg fixed-top">
 
     <h1 class="textfont captiontext ">Stock Analysis
 
@@ -21,7 +21,7 @@
     <h3 class="textfont textnav">The S&P 500 is widely regarded as the best single gauge of large-cap US equities.</h3>
     <h3 class="textfont textnav">The index includes 500 leading companies and captures approximately 80% coverage of
       available market capitalization.</h3>
-    <a href="landingpage.html" style="color:rgb(247, 242, 242)" ;> GO BACK HOME </a>
+    <a href="{{url_for('home')}}" style="color:rgb(247, 242, 242)" ;> GO BACK HOME </a>
   </div>
 
   <!-- TIME SERIES GRAPH -->
@@ -84,14 +84,14 @@
   <!-- FUNCTION CALL FOR BUTTON to change teh sector go back to home page -->
   <script>
     function myFunc1() {
-      window.location.href = "http://localhost:8000/landingpage.html";
+      window.location.href = "{{url_for('home')}}";
     } 
   </script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <!-- <script src="./landing.js"></script> -->
-  <script src="../static/stock.js"></script>
+  <script src="static/stock.js"></script>
 
 </body>
 
