@@ -24,7 +24,7 @@ def sectorHome():
 #HOME PAGE- APPLE
 @app.route('/')
 def home():
-    return render_template('landingpage.html')
+    return render_template('landingpage.html')
 
     # selected_ticker= 'AAPL' 
     # stocks= all_stock(selected_ticker)
