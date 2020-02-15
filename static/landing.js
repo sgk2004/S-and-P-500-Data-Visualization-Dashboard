@@ -4,7 +4,7 @@ function optionChangedSector(selectedID){
     // console.log(selectedID);
  
     // Read the json file for the data
-    d3.json("http://localhost:5000/sector/").then((data) => {
+    d3.json("/sector/").then((data) => {
          // Check if data is loaded fully
         //  console.log(data);
     
@@ -60,7 +60,7 @@ function optionChangedSector(selectedID){
     });
 
      // // JENNIE
-     d3.json(`http://localhost:5000/sector/${selectedID}/`).then( data => {
+     d3.json(`/sector/${selectedID}/`).then( data => {
           // d3.json("2018AMAZON.json").then( data => {
             //   console.log(data)
               const tickers =data.map( record => record.ticker);
